@@ -1,52 +1,53 @@
-#-------------------------------------------------------
-# THIS PROGRAM READS PASSWORD INPUT FROM USER
-# AND OUPUTS IT TO THE FILE software.txt
-#----------------------------------------------------
+from tkinter import *
+import tkinter.messagebox
 
-#Create window and set size
-import tkinter as tk
-window = tk.Tk()
-window.geometry("620x780")
-window.title("Password Database")
+def save_info():
+    global username
+    global password
+    global website
 
-#Create 3 labels for username, password and website
-username = tk.Label(text = "Username")
-username.grid(column=0,row=1)
-password = tk.Label(text = "Password")
-password.grid(column=0,row=2)
-website = tk.Label(text = "Website")
-website.grid(column=0,row=3)
+    username = username.get()
+    password = password.get()
+    website = website.get()
 
-#Create 3 entry fields for username, password and website
-username_entry = tk.Entry()
-username_entry.grid(column=1,row=1)
-password_entry = tk.Entry()
-password_entry.grid(column=1,row=2)
-website_entry = tk.Entry()
-website_entry.grid(column=1,row=3)
+    print(username,password,website)
 
-#Create function to take entries and create a results bar
-def getInput():
-    result = Web(str(username_entry.get()),str(password_entry.get()),str(website_entry.get()))
-    textArea = tk.Text(master=window,height=10,width=25)
-    textArea.grid(column=1,row=6)
-    answer = "Password Entry Complete!"
-    textArea.insert(tk.END,answer)
+    file = open("Software.txt","w")
+    file.write("Username: " + username)
+    file.write("\n")
+    file.write("Password: " + password)
+    file.write("\n")
+    file.write("Website: " + str(website))
+    file.close()
 
-class Web:
-    def _init_(name,word,site):
-        name.username = username
-        word.password = password
+app = Tk()
+app.geometry("500x500")
+app.title("Password Manager")
+heading = Label(text="Password Manager",fg="white",bg="blue",width="500",height="3",font="10")
+heading.pack()
 
-#Create a button to submit results
-button=tk.Button(window,text="Save",command=getInput,bg="lightblue")
-button.grid(column=1,row=5)
+username_text = Label(text="Username: ")
+password_text = Label(text="Password: ")
+website_text = Label(text="Website: ")
+username_text.place(x=15,y=70)
+password_text.place(x=15,y=140)
+website_text.place(x=15,y=210)
 
-# FIRST WE TAKE INPUT FOR THE SOFTWARE TITLE
-file = open("Software.txt", "a")
-file.write(website + "\n")
-file.write(username + "\n")
-file.write(password + "\n")
-file.write("---" + "\n")
-file.close()
-window.mainloop()
+username = StringVar()
+password = StringVar()
+website = StringVar()
+
+username_entry = Entry(textvariable=username,width="30")
+password_entry = Entry(textvariable=password,width="30")
+website_entry = Entry(textvariable=website,width="30")
+username_entry.place(x=15,y=100)
+password_entry.place(x=15,y=170)
+website_entry.place(x=15,y=240)
+
+button = Button(app,text="Submit Data",command=lambda:[save_info(),onClick()],width="30",height="2",bg="lightgrey")
+button.place(x=15,y=290)
+
+def onClick():
+    tkinter.messagebox.showinfo("Password Manager","Data Saved Successfully")
+
+mainloop()
