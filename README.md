@@ -1,2 +1,2 @@
-# python-password-application
-A python password manager with a GUI designed using Tkinter. This is my first propery Python application that I am designing myself so I am learning as I go.
+# Python Personal Beginner Projects
+Here are a list of some of my beginner python projects. I create these as I am in the process of learning but also try to put my own twist on everything I learn and try personalise it into something that works for me.
