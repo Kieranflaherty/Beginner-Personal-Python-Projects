@@ -14,6 +14,12 @@ This is also a TKinter application which allows you to store your login details.
 
 ![image](https://user-images.githubusercontent.com/76489588/183909674-081ba3cd-09ed-4dfe-99f5-4496fca4b7a3.png)
 
-###
+### Snake Game
+
+This is a program using Tkinter for the classic snake game. 
+
+![image](https://user-images.githubusercontent.com/76489588/183910080-4e9d8afe-200e-4cb0-b9b7-bd2f67334c13.png)
+
+
 
 
