@@ -1,2 +1,10 @@
 # Python Personal Beginner Projects
-Here are a list of some of my beginner python projects. I create these as I am in the process of learning but also try to put my own twist on everything I learn and try personalise it into something that works for me.
+
+Here are a series of Python projects that I have developed throughout the learning process whihc all include both a front end using Tkinter. Below is the current list of projects I have created.
+
+### Social Media Bookmark Application
+
+This is a Tkinter application which allows you to store bookmarks to your social media accounts so that you can quickly access all of your accounts from one place.
+
+ ![image](https://user-images.githubusercontent.com/76489588/183909073-e2cc7062-5df6-43c3-9a0c-6bc4d48741fc.png)
+
